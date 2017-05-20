@@ -35,14 +35,16 @@
   <kind value="resource" />
   <abstract value="false" />
   <type value="Observation" />
-  <baseDefinition value="http://nictiz.nl/fhir/StructureDefinition/nl-core-observation" />
+  <baseDefinition value="http://nictiz.nl/fhir/StructureDefinition/observation-nl" />
+  <derivation value="constraint"/>
   <differential>
     <element id="Observation">
       <path value="Observation" />
+      <alias value="FunctioneleOfMentaleStatus" />
       <mapping>
         <identity value="zib-functioneleofmentalestatus" />
         <map value="NL-CM:4.26.1" />
-      </mapping>    
+      </mapping>
     </element>
     <element id="Observation.extension">
       <path value="Observation.extension" />
@@ -59,7 +61,7 @@
       <sliceName value="MedicalAid" />
       <short value="MedicalAid" />
       <definition value="Medical aid the patient has to reduce the impact of the disability or disorder." />
-      <alias value="MedischHulpmiddel" />
+      <alias value="Hulpmiddel" />
       <type>
         <code value="Extension" />
         <profile value="http://nictiz.nl/fhir/StructureDefinition/zib-FunctionalOrMentalStatus-MedicalAid" />
@@ -141,14 +143,18 @@
         </valueSetReference>
       </binding>
     </element>
-    <element id="Observation.effectiveDateTime">
-      <path value="Observation.effectiveDateTime" />
+    <element id="Observation.effectivePeriod">
+      <path value="Observation.effectivePeriod" />
+      <comment value="ZIB FuncntioneleOfMentaleStatus does not include an end StatusDate. The effectivePeriod.start can be used as StatusDate. This profile allows to use an end date as well. "/>
+      <type>
+        <code value="Period" />
+      </type>   
+    </element>
+    <element id="Observation.effectivePeriod.start">
+      <path value="Observation.effectivePeriod.start"/>
       <short value="StatusDate" />
       <definition value="Date on which the status was determined. A ‘vague’ date, such as only the year, is permitted." />
       <alias value="StatusDatum" />
-      <type>
-        <code value="dateTime" />
-      </type>
       <mapping>
         <identity value="zib-functioneleofmentalestatus" />
         <map value="NL-CM:4.26.6" />
@@ -229,10 +235,10 @@
         </valueSetReference>
       </binding>
     </element>
-    <element id="Observation.comments">
-      <path value="Observation.comments" />
+    <element id="Observation.comment">
+      <path value="Observation.comment" />
       <short value="Explanation" />
-      <definition value="Explanatory comments as a description of the functional or mental status." />
+      <definition value="Explanatory comment as a description of the functional or mental status." />
       <alias value="Toelichting" />
       <mapping>
         <identity value="zib-functioneleofmentalestatus" />

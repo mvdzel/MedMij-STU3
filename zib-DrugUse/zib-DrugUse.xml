@@ -36,7 +36,8 @@
   <kind value="resource"/>
   <abstract value="false"/>
   <type value="Observation"/>
-  <baseDefinition value="http://nictiz.nl/fhir/StructureDefinition/nl-core-observation"/>
+  <baseDefinition value="http://nictiz.nl/fhir/StructureDefinition/observation-nl"/>
+  <derivation value="constraint"/>
   <differential>
     <element id="Observation">
       <path value="Observation"/>
@@ -108,10 +109,10 @@
         <map value="NL-CM:7.4.3"/>
       </mapping>
     </element>
-    <element id="Observation.comments">
-      <path value="Observation.comments"/>
+    <element id="Observation.comment">
+      <path value="Observation.comment"/>
       <short value="Explanation"/>
-      <definition value="Relevant comments on the drug use."/>
+      <definition value="Relevant comment on the drug use."/>
       <alias value="Toelichting"/>
       <mapping>
         <identity value="zib-drugsgebruik"/>

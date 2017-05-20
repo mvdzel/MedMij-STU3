@@ -35,6 +35,7 @@
   <abstract value="false" />
   <type value="DiagnosticReport" />
   <baseDefinition value="http://hl7.org/fhir/StructureDefinition/DiagnosticReport" />
+  <derivation value="constraint"/>
   <differential>
     <element id="DiagnosticReport">
       <path value="DiagnosticReport" />
@@ -75,6 +76,7 @@
       <sliceName value="ResultStatus"/>
       <short value="Provides the specific CBB code for ResultStatus" />
       <definition value="Defines a more specific value to a code. Especially useful for FHIRs required ValueSets." />
+      <alias value="ResultaatStatus" />
       <min value="0" />
       <max value="1" />
       <type>
@@ -127,10 +129,10 @@
     </element>
     <element id="DiagnosticReport.subject">
       <path value="DiagnosticReport.subject" />
+      <alias value="Patient"/>
       <type>
         <code value="Reference" />
-        <profile value="http://fhir.nl/fhir/StructureDefinition/nl-core-patient" />
-        <targetProfile value="http://hl7.org/fhir/StructureDefinition/Patient" />
+        <targetProfile value="http://fhir.nl/fhir/StructureDefinition/nl-core-patient" />
       </type>
       <mapping>
         <identity value="zib-patient" />
@@ -143,8 +145,7 @@
       <alias value="Monster" />
       <type>
         <code value="Reference" />
-        <profile value="http://nictiz.nl/fhir/StructureDefinition/zib-LaboratoryTestResult-Specimen" />
-        <targetProfile value="http://hl7.org/fhir/StructureDefinition/Specimen" />
+        <targetProfile value="http://nictiz.nl/fhir/StructureDefinition/zib-LaboratoryTestResult-Specimen" />
       </type>
       <mapping>
         <identity value="zib-overdrachtlaboratoriumuitslag" />
@@ -155,12 +156,8 @@
       <path value="DiagnosticReport.result" />
       <type>
         <code value="Reference" />
-        <profile value="http://nictiz.nl/fhir/StructureDefinition/zib-LaboratoryTestResult-Observation" />
+        <targetProfile value="http://nictiz.nl/fhir/StructureDefinition/zib-LaboratoryTestResult-Observation" />
       </type>
-      <mapping>
-        <identity value="zib-overdrachtlaboratoriumuitslag" />
-        <map value="NL-CM:13.1.1" />
-      </mapping>
     </element>
   </differential>
 </StructureDefinition>

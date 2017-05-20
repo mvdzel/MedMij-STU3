@@ -35,12 +35,14 @@
   <kind value="resource" />
   <abstract value="false" />
   <type value="Observation" />
-  <baseDefinition value="http://nictiz.nl/fhir/StructureDefinition/nl-core-observation" />
+  <baseDefinition value="http://nictiz.nl/fhir/StructureDefinition/observation-nl" />
+  <derivation value="constraint"/>
   <differential>
     <element id="Observation">
       <path value="Observation" />
       <short value="LivingSituation" />
       <definition value="Root concept of the LivingSituation information model. This root concept contains all data elements of the LivingSituation information model." />
+      <alias value="Woonsituatie" />
       <mapping>
         <identity value="zib-woonsituatie" />
         <map value="NL-CM:7.8.1" />
@@ -89,8 +91,8 @@
         <map value="NL-CM:7.8.3" />
       </mapping>
     </element>
-    <element id="Observation.comments">
-      <path value="Observation.comments" />
+    <element id="Observation.comment">
+      <path value="Observation.comment" />
       <short value="Explanation" />
       <alias value="Toelichting" />
       <mapping>

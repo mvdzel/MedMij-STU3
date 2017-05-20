@@ -35,7 +35,8 @@
   <kind value="resource" />
   <abstract value="false" />
   <type value="Observation" />
-  <baseDefinition value="http://nictiz.nl/fhir/StructureDefinition/nl-core-observation" />
+  <baseDefinition value="http://nictiz.nl/fhir/StructureDefinition/observation-nl" />
+  <derivation value="constraint" />
   <differential>
     <element id="Observation">
       <path value="Observation" />
@@ -107,17 +108,20 @@
       <binding>
         <strength value="extensible" />
         <description value="Codes defining the alcohol intake status." />
-        <valueSetUri value="http://decor.nictiz.nl/fhir/ValueSet/2.16.840.1.113883.2.4.3.11.60.40.2.7.3.2--20150401000000" />
+        <valueSetReference>
+          <reference value="http://decor.nictiz.nl/fhir/ValueSet/2.16.840.1.113883.2.4.3.11.60.40.2.7.3.2--20150401000000"/>
+          <display value="AlcoholGebruikStatusCodelijst"/>
+        </valueSetReference>
       </binding>
       <mapping>
         <identity value="zib-alcoholgebruik" />
         <map value="NL-CM:7.3.2" />
       </mapping>
     </element>
-    <element id="Observation.comments">
-      <path value="Observation.comments" />
+    <element id="Observation.comment">
+      <path value="Observation.comment" />
       <short value="Explanation" />
-      <definition value="Relevant comments on the alcohol consumption." />
+      <definition value="Relevant comment on the alcohol consumption." />
       <alias value="Toelichting" />
       <mapping>
         <identity value="zib-alcoholgebruik" />
