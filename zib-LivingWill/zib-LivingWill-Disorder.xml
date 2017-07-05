@@ -4,7 +4,8 @@
     <lastUpdated value="2017-05-03T14:27:22.056+02:00" />
   </meta>
   <url value="http://nictiz.nl/fhir/StructureDefinition/zib-LivingWill-Disorder" />
-  <name value="ZIB LivingWill Disorder" />
+  <name value="ZIB-LivingWill-Disorder" />
+  <title value="ZIB LivingWill Disorder" />
   <status value="draft" />
   <date value="2017-05-03T14:01:26.8857331+02:00" />
   <publisher value="Niztiz" />
@@ -16,7 +17,7 @@
       <use value="work" />
     </telecom>
   </contact>
-  <description value="The problem or disorder to which the living will applies as defined by the Dutch Clinical Building Block (Dutch: Zorginformatiebouwsteen or ZIB) 'OverdrachtConcern' version 3.0." />
+  <description value="The problem or disorder to which the living will applies as defined by the Dutch Clinical Building Block (Dutch: Zorginformatiebouwsteen or ZIB) 'OverdrachtConcern' version 1.0." />
   <copyright value="CC0" />
   <fhirVersion value="3.0.0" />
   <kind value="complex-type" />

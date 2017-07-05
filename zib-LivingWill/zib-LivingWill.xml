@@ -7,7 +7,8 @@
     <valueCode value="cbcc" />
   </extension>
   <url value="http://nictiz.nl/fhir/StructureDefinition/zib-LivingWill" />
-  <name value="ZIB LivingWill" />
+  <name value="ZIB-LivingWill" />
+  <title value="ZIB LivingWill" />
   <status value="draft" />
   <date value="2017-05-03T12:18:39.6788994+02:00" />
   <publisher value="Nictiz" />
@@ -19,7 +20,7 @@
       <use value="work" />
     </telecom>
   </contact>
-  <description value="LivingWill as defined by the Dutch Clinical Building Block (Dutch: Zorginformatiebouwsteen or ZIB) version 3.0.&#xD;&#xA;A living will is a verbal or written description of the patient’s wishes with regard to future medical action or end of their life. A living will is mainly used for situations in which the patient is no longer able to speak about these decisions with their healthcare provider." />
+  <description value="LivingWill as defined by the Dutch Clinical Building Block (Dutch: Zorginformatiebouwsteen or ZIB) version 1.0.&#xD;&#xA;A living will is a verbal or written description of the patient’s wishes with regard to future medical action or end of their life. A living will is mainly used for situations in which the patient is no longer able to speak about these decisions with their healthcare provider." />
   <purpose value="A good overview of the patient’s wishes is important. A healthcare provider can use the living will to discuss the existing wishes with the persons involved and to incorporate these wishes in their own policy. A concise, orderly list is of particular importance in acute care situations." />
   <copyright value="CC0" />
   <fhirVersion value="3.0.0" />
@@ -75,7 +76,7 @@
       <max value="1" />
       <type>
         <code value="Extension" />
-        <profile value="http://nictiz.nl/fhir/StructureDefinition/zib-LivingWill-Explanation" />
+        <profile value="http://nictiz.nl/fhir/StructureDefinition/zib-Explanation" />
       </type>
       <mapping>
         <identity value="zib-wilsverklaring" />
@@ -150,7 +151,7 @@
       <path value="Consent.actor.reference"/>
       <type>
         <code value="Reference"/>
-        <targetProfile value="http://hl7.org/fhir/StructureDefinition/Device"/>
+        <targetProfile value="http://nictiz.nl/fhir/StructureDefinition/zib-MedicalAidProduct"/>
       </type>
       <type>
         <code value="Reference"/>
@@ -196,7 +197,7 @@
       <path value="Consent.except.actor.reference"/>
       <type>
         <code value="Reference"/>
-        <targetProfile value="http://hl7.org/fhir/StructureDefinition/Device"/>
+        <targetProfile value="http://nictiz.nl/fhir/StructureDefinition/zib-MedicalAidProduct"/>
       </type>
       <type>
         <code value="Reference"/>

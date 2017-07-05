@@ -1,15 +1,12 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<StructureDefinition xmlns="http://hl7.org/fhir">
-  <meta>
+﻿<?xml-model href="http://hl7.org/fhir/structuredefinition.sch" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
+<StructureDefinition xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://hl7.org/fhir http://hl7.org/fhir/structuredefinition.xsd" xmlns="http://hl7.org/fhir">
+   <meta>
     <versionId value="1" />
     <lastUpdated value="2017-05-17T17:52:23.695+02:00" />
   </meta>
-  <text>
-    <status value="additional" /><div xmlns="http://www.w3.org/1999/xhtml">
-      <p>ProcedureRequest as defined by the Dutch Clinical Building Block (Dutch: Zorginformatiebouwsteen or ZIB) version 3.0 OverdrachtGeplandeZorgActiviteit</p>
-    </div></text>
   <url value="http://nictiz.nl/fhir/StructureDefinition/zib-ProcedureRequest" />
-  <name value="ZIB ProcedureRequest" />
+  <name value="ZIB-ProcedureRequest" />
+  <title value="ZIB ProcedureRequest" />
   <status value="draft" />
   <date value="2017-05-17T13:30:03.2275207+01:00" />
   <publisher value="Nictiz" />
@@ -21,7 +18,7 @@
       <use value="work" />
     </telecom>
   </contact>
-  <description value="ProcedureRequest as defined by the Dutch Clinical Building Block (Dutch: Zorginformatiebouwsteen or ZIB) version 3.0 OverdrachtGeplandeZorgActiviteit. It includes the requests of NursingProcedure and Procedures." />
+  <description value="ProcedureRequest as defined by the Dutch Clinical Building Block (Dutch: Zorginformatiebouwsteen or ZIB) version 1.0.OverdrachtGeplandeZorgActiviteit. It includes the requests of NursingProcedure and Procedures." />
   <purpose value="Recording planned appointments, referrals, treatments, diagnostic procedures, open orders and orders of which the results are not yet known gives every recipient, user or healthcare facility insight in the planned healthcare for this patient. This can prevent situations in which diagnostics and treatment can conflict with each other.&#xD;&#xA;This will give the recipient the option to place an order, cancel the order or act in any other way in accordance with their own policy.&#xD;&#xA;For orders that do not yet have results, the recipient is informed of the fact that potentially relevant results will be made available (which have to be requested)." />
   <copyright value="CC0" />
   <fhirVersion value="3.0.0" />
