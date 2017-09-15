@@ -2,13 +2,13 @@
 <StructureDefinition xmlns="http://hl7.org/fhir">
   <meta>
     <versionId value="1" />
-    <lastUpdated value="2017-06-14T11:01:17.702+02:00" />
+    <lastUpdated value="2017-08-21T15:37:14.109+02:00" />
   </meta>
   <url value="http://nictiz.nl/fhir/StructureDefinition/zib-Concern" />
   <name value="ZIB-Concern" />
   <title value="ZIB Concern" />
   <status value="draft" />
-  <date value="2017-01-11T13:30:21.5094956+01:00" />
+  <date value="2017-01-11T14:30:21.5094956+01:00" />
   <publisher value="Nictiz" />
   <contact>
     <name value="Nictiz" />
@@ -127,19 +127,6 @@
     <element id="Condition.code.coding">
       <path value="Condition.code.coding" />
       <max value="1" />
-    </element>
-    <element id="Condition.code.text">
-      <extension url="http://hl7.org/fhir/StructureDefinition/elementdefinition-translatable">
-        <valueBoolean value="true" />
-      </extension>
-      <path value="Condition.code.text" />
-      <short value="ConcernLabel" />
-      <definition value="If needed, a short, written description of the concern. Mainly in first-line care this will be used for the episode name." />
-      <alias value="ConcernLabel" />
-      <mapping>
-        <identity value="zib-overdrachtconcern" />
-        <map value="NL-CM:5.1.9" />
-      </mapping>
     </element>
     <element id="Condition.subject">
       <path value="Condition.subject" />
