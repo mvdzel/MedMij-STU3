@@ -17,8 +17,8 @@ Steps:
 	1. Pull MedMij-STU3 from git > c:\eclipse workspace\MedMij-STU3
 	1. Call hidden feature of FhirConsole "FhirConsole mz"
 	1. cd c:\temp\MedMij-STU3\snapshot
-	1. type zib-*.xml nl-*.xml > MedMij-all-in-one-snapshots.xml
-	1. add <root></root>-tag to 1.4 xml file
+	1. type zib-\*.xml nl-\*.xml > MedMij-all-in-one-snapshots.xml
+	1. add root-tag to 1.4 xml file (\<root\> as first line and \</root\> as last line
 1. Create the ZIB MAX XML
 	1. You need the eap version of the ZIB's + Sparx Enterprise Architect + HL7 MAX Extension
 1. Run the xslt
