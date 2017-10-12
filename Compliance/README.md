@@ -15,7 +15,7 @@ Anyhow this is a very useful for checking the mappings.
 Steps:
 1. Create the MedMij-all-in-one.xml with snapshots expanded using FhirConsole
 	1. Pull MedMij-STU3 from git > c:\eclipse workspace\MedMij-STU3
-	1. Call hidden feature of FhirConsole "FhirConsole mz"
+	1. Call hidden feature of FhirConsole "FhirConsole mz" - N.B. currently expects differentials at E:\MedMij-STU3, output folder E:\MedMij-STU3-snapshots and C:\VisualStudio Projects\fhir-net-api\src\Hl7.Fhir.Specification\specification.zip
 	1. cd c:\temp\MedMij-STU3\snapshot
 	1. type zib-\*.xml nl-\*.xml > MedMij-all-in-one-snapshots.xml
 	1. add root-tag to 1.4 xml file (\<root\> as first line and \</root\> as last line
