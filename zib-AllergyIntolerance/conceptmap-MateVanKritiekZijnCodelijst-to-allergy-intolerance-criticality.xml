@@ -3,8 +3,8 @@
     <url value="http://nictiz.nl/fhir/ConceptMap/MateVanKritiekZijnCodelijst-to-allergy-intolerance-criticality"/>
     <version value="1.0"/>
     <name value="MateVanKritiekZijnCodelijst-to-allergy-intolerance-criticality"/>
-    <title value="ZIB MateVanKritiekZijnCodelijst to allergy-intolerance-criticality"/>
-    <status value="draft"/>
+    <title value="HCIM MateVanKritiekZijnCodelijst to allergy-intolerance-criticality"/>
+    <status value="active"/>
     <date value="2017-01-04T10:27:28.0292377+01:00"/>
     <publisher value="Nictiz"/>
     <contact>

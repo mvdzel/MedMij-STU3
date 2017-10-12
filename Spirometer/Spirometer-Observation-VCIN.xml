@@ -6,6 +6,7 @@
     <lastUpdated value="2017-01-31T15:52:58.849+00:00" />
   </meta>
   <url value="http://nictiz.nl/fhir/StructureDefinition/Spirometer-Observation-VCIN" />
+  <version value="1.0"/>
   <name value="Spirometer-Observation-VC-IN" />
   <title value="Spirometer Observation VC IN" />
   <status value="draft" />
@@ -32,11 +33,9 @@
     </element>
     <element id="Observation.code">
       <path value="Observation.code" />
-      <short value="code" />
     </element>
     <element id="Observation.code.coding">
       <path value="Observation.code.coding" />
-      <short value="coding" />
     </element>
     <element id="Observation.code.coding.system">
       <path value="Observation.code.coding.system" />

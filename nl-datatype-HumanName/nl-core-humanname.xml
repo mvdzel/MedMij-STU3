@@ -1,5 +1,5 @@
-<?xml-model href="http://hl7.org/fhir/structuredefinition.sch" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
-<StructureDefinition xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://hl7.org/fhir http://hl7.org/fhir/structuredefinition.xsd" xmlns="http://hl7.org/fhir">
+<?xml-model href="http://hl7.org/fhir/STU3/structuredefinition.sch" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
+<StructureDefinition xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://hl7.org/fhir http://hl7.org/fhir/STU3/structuredefinition.xsd" xmlns="http://hl7.org/fhir">
     <id value="nl-core-humanname"/>
     <meta>
         <versionId value="17"/>
@@ -8,7 +8,7 @@
     <url value="http://fhir.nl/fhir/StructureDefinition/nl-core-humanname"/>
     <name value="nl-core-humanname"/>
     <title value="nl-core-humanname"/>
-    <status value="draft"/>
+    <status value="active"/>
     <date value="2015-09-22T12:02:49+02:00"/>
     <publisher value="HL7 Netherlands"/>
     <contact>
@@ -21,11 +21,12 @@
     </contact>
     <description value="Base datatype for HumanName Type with additions for Dutch realm names. Dutch names break down the family into maximum of 4 parts that are important to know separately in some if not most use cases."/>
     <copyright value="CC0"/>
-    <fhirVersion value="3.0.0"/>
+    <fhirVersion value="3.0.1"/>
     <mapping>
-        <identity value="zib-name"/>
-        <uri value="https://zibs.nl/wiki/Patient(NL)"/>
-        <name value="Name as part of Zorginformatiebouwsteen Patient"/>
+        <identity value="hcim-nameinformation-v2.0.1-2015EN"/>
+        <uri value="https://zibs.nl/wiki/Patient-v2.0.1(2015EN)"/>
+        <name value="Human name as part of HCIM Patient-v2.0.1(2015EN)"/>
+        <comment value="NameInformation name has become an independent information model as of release 2017 of the HCIMs"/>
     </mapping>
     <mapping>
         <identity value="BRP"/>
@@ -54,7 +55,7 @@
                             <valueString value="Jongeneel"/>
                         </extension>
                         <extension url="http://hl7.org/fhir/StructureDefinition/humanname-partner-prefix">
-                            <valueString value="de"/>
+                            <valueString value="de "/>
                         </extension>
                         <extension url="http://hl7.org/fhir/StructureDefinition/humanname-partner-name">
                             <valueString value="Haas"/>
@@ -87,7 +88,7 @@
                 <xpath value="not(f:extension[@url='http://hl7.org/fhir/StructureDefinition/humanname-partner-prefix']) or f:extension[@url='http://hl7.org/fhir/StructureDefinition/humanname-partner-name']"/>
             </constraint>
             <mapping>
-                <identity value="zib-name"/>
+                <identity value="hcim-nameinformation-v2.0.1-2015EN"/>
                 <map value="NL-CM:0.1.6"/>
             </mapping>
             <mapping>
@@ -110,16 +111,22 @@
             <sliceName value="humannameAssemblyOrder"/>
             <short value="Preferred display order of name parts"/>
             <definition value="A code that represents the preferred display order of the components of this human name."/>
+            <alias value="Voorkeursvolgorde van de naamdelen."/>
             <min value="0"/>
             <max value="1"/>
             <type>
                 <code value="Extension"/>
                 <profile value="http://hl7.org/fhir/StructureDefinition/humanname-assembly-order"/>
             </type>
+            <mapping>
+                <identity value="hcim-nameinformation-v2.0.1-2015EN"/>
+                <map value="NL-CM:0.1.34"/>
+            </mapping>
         </element>
         <element id="HumanName.family">
             <path value="HumanName.family"/>
-            <short value="Family name"/>
+            <short value="Surname"/>
+            <alias value="Achternaam"/>
             <max value="1"/>
         </element>
         <element id="HumanName.family.extension">
@@ -136,59 +143,89 @@
         <element id="HumanName.family.extension:humannameOwnPrefix">
             <path value="HumanName.family.extension"/>
             <sliceName value="humannameOwnPrefix"/>
-            <short value="Voorvoegsel derived from person's own surname"/>
-            <definition value="The prefix portion (e.g. voorvoegsel) of the family name that is derived from the person&amp;#39;s own surname, as distinguished from any portion that is derived from the surname of the person&amp;#39;s partner or spouse."/>
-            <comment value="An example of a voorvoegsel is the &amp;quot;van&amp;quot; in &amp;quot;Ludwig van Beethoven&amp;quot;. Since the voorvoegsel doesn&amp;#39;t sort completely alphabetically, it is reasonable to specify it as a separate sub-component."/>
+            <short value="PrefixOwnName"/>
+            <definition value="The prefix portion (e.g. voorvoegsel) inclusive of the space between the prefix and the surname, if applicable, of the family name that is derived from the person's own surname, as distinguished from any portion that is derived from the surname of the person's partner or spouse."/>
+            <comment value="An example of a voorvoegsel is the &quot;van&quot; in &quot;Ludwig van Beethoven&quot;. Since the voorvoegsel doesn't sort completely alphabetically, it is reasonable to specify it as a separate sub-component."/>
+            <alias value="VoorvoegselGeslachtsnaam"/>
             <max value="1"/>
             <type>
                 <code value="Extension"/>
                 <profile value="http://hl7.org/fhir/StructureDefinition/humanname-own-prefix"/>
             </type>
+            <mapping>
+                <identity value="hcim-nameinformation-v2.0.1-2015EN"/>
+                <map value="NL-CM:0.1.38"/>
+            </mapping>
         </element>
         <element id="HumanName.family.extension:humannameOwnName">
             <path value="HumanName.family.extension"/>
             <sliceName value="humannameOwnName"/>
-            <short value="Portion derived from person's own surname"/>
-            <definition value="The portion of the family name that is derived from the person&amp;#39;s own surname, as distinguished from any portion that is derived from the surname of the person&amp;#39;s partner or spouse."/>
-            <comment value="If the person&amp;#39;s surname has legally changed to become (or incorporate) the surname of the person&amp;#39;s partner or spouse, this is the person&amp;#39;s surname immediately prior to such change. Often this is the person&amp;#39;s &amp;quot;maiden name&amp;quot;."/>
+            <short value="OwnName"/>
+            <definition value="The portion of the family name that is derived from the person's own surname, as distinguished from any portion that is derived from the surname of the person's partner or spouse."/>
+            <comment value="If the person's surname has legally changed to become (or incorporate) the surname of the person's partner or spouse, this is the person's surname immediately prior to such change. Often this is the person's &quot;maiden name&quot;."/>
+            <alias value="Geslachtsnaam"/>
             <max value="1"/>
             <type>
                 <code value="Extension"/>
                 <profile value="http://hl7.org/fhir/StructureDefinition/humanname-own-name"/>
             </type>
+            <mapping>
+                <identity value="hcim-nameinformation-v2.0.1-2015EN"/>
+                <map value="NL-CM:0.1.24"/>
+            </mapping>
         </element>
         <element id="HumanName.family.extension:humannamePartnerPrefix">
             <path value="HumanName.family.extension"/>
             <sliceName value="humannamePartnerPrefix"/>
-            <short value="Voorvoegsel derived from person's partner's surname"/>
-            <definition value="Voorvoegsel derived from person's partner's surname"/>
-            <comment value="An example of a voorvoegsel is the &amp;quot;van&amp;quot; in &amp;quot;Ludwig van Beethoven&amp;quot;. Since the voorvoegsel doesn&amp;#39;t sort completely alphabetically, it is reasonable to identify it as a separate sub-component."/>
+            <short value="PrefixSurname"/>
+            <definition value="Voorvoegsel derived from person's partner's surname inclusive of the space between the prefix and the surname, if applicable."/>
+            <comment value="An example of a voorvoegsel is the &quot;van&quot; in &quot;Ludwig van Beethoven&quot;. Since the voorvoegsel doesn't sort completely alphabetically, it is reasonable to identify it as a separate sub-component."/>
+            <alias value="VoorvoegselGeslachtsnaamPartner"/>
             <max value="1"/>
             <type>
                 <code value="Extension"/>
                 <profile value="http://hl7.org/fhir/StructureDefinition/humanname-partner-prefix"/>
             </type>
+            <mapping>
+                <identity value="hcim-nameinformation-v2.0.1-2015EN"/>
+                <map value="NL-CM:0.1.39"/>
+            </mapping>
         </element>
         <element id="HumanName.family.extension:humannamePartnerName">
             <path value="HumanName.family.extension"/>
             <sliceName value="humannamePartnerName"/>
-            <short value="Portion derived from person's partner's surname"/>
-            <definition value="The portion of the family name that is derived from the person&amp;#39;s partner&amp;#39;s surname, as distinguished from any portion that is derived from the surname of the person&amp;#39;s own name."/>
-            <comment value="If the person&amp;#39;s surname has legally changed to become (or incorporate) the surname of the person&amp;#39;s partner or spouse, this is the person&amp;#39;s surname immediately prior to such change. Often this is the person&amp;#39;s &amp;quot;maiden name&amp;quot;."/>
+            <short value="LastNamePartner"/>
+            <definition value="The portion of the family name that is derived from the person's partner's surname, as distinguished from any portion that is derived from the surname of the person's own name."/>
+            <comment value="If the person's surname has legally changed to become (or incorporate) the surname of the person's partner or spouse, this is the person's surname immediately prior to such change. Often this is the person's &quot;maiden name&quot;."/>
+            <alias value="GeslachtsnaamPartner"/>
             <max value="1"/>
             <type>
                 <code value="Extension"/>
                 <profile value="http://hl7.org/fhir/StructureDefinition/humanname-partner-name"/>
             </type>
+            <mapping>
+                <identity value="hcim-nameinformation-v2.0.1-2015EN"/>
+                <map value="NL-CM:0.1.25"/>
+            </mapping>
         </element>
         <element id="HumanName.given">
             <path value="HumanName.given"/>
+            <short value="Given"/>
             <definition value="Note that in order to mark the type of a given name, that you use the FHIR standard extension for ISO 21090 EN Qualifiers. Examples include call me name (Dutch: roepnaam) and initials. Each initial is expected to be delimited by a dot."/>
-            <alias value="voornaam"/>
-            <alias value="initialen"/>
+            <alias value="Voornamen"/>
+            <alias value="Initialen"/>
+            <alias value="Roepnaam"/>
             <mapping>
-                <identity value="zib-name"/>
+                <identity value="hcim-nameinformation-v2.0.1-2015EN"/>
                 <map value="NL-CM:0.1.26"/>
+            </mapping>
+            <mapping>
+                <identity value="hcim-nameinformation-v2.0.1-2015EN"/>
+                <map value="NL-CM:0.1.35"/>
+            </mapping>
+            <mapping>
+                <identity value="hcim-nameinformation-v2.0.1-2015EN"/>
+                <map value="NL-CM:0.1.27"/>
             </mapping>
             <mapping>
                 <identity value="BRP"/>

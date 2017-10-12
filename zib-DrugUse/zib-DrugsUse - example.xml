@@ -46,7 +46,7 @@
         <coding>
             <system value="http://snomed.info/sct"/>
             <code value="228366006"/>
-            <display value="Finding related to drug misuse behaviour (finding)"/>
+            <display value="Finding relating to drug misuse behavior (finding)"/>
         </coding>
     </code>
     <subject>
@@ -69,14 +69,14 @@
             <coding>
                 <system value="http://snomed.info/sct"/>
                 <code value="410942007"/>
-                <display value="Drug or medicament"/>
+                <display value="Drug or medicament (substance)"/>
             </coding>
         </code>
         <valueCodeableConcept>
             <coding>
                 <system value="http://snomed.info/sct"/>
                 <code value="373464007"/>
-                <display value="Ketamine (substance)"/>
+                <display value="Ketamine"/>
             </coding>
         </valueCodeableConcept>
     </component>
@@ -85,7 +85,7 @@
             <coding>
                 <system value="http://snomed.info/sct"/>
                 <code value="410675002"/>
-                <display value="Route of administration"/>
+                <display value="Route of administration (attribute)"/>
             </coding>
         </code>
         <valueCodeableConcept>
@@ -101,7 +101,7 @@
             <coding>
                 <system value="http://snomed.info/sct"/>
                 <code value="410675002"/>
-                <display value="Route of administration"/>
+                <display value="Route of administration (attribute)"/>
             </coding>
         </code>
         <valueCodeableConcept>
@@ -117,7 +117,7 @@
             <coding>
                 <system value="http://snomed.info/sct"/>
                 <code value="228390007"/>
-                <display value="Frequency of drug misuse"/>
+                <display value="Frequency of drug misuse (observable entity)"/>
             </coding>
         </code>
         <valueRatio>

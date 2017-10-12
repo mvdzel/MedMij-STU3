@@ -3,8 +3,8 @@
     <url value="http://nictiz.nl/fhir/ConceptMap/AllergieStatusCodelijst-to-allergy-status"/>
     <version value="1.0"/>
     <name value="AllergieStatusCodelijst-to-allergy-status"/>
-    <title value="ZIB AllergieStatusCodelijst to allergy status"/>
-    <status value="draft"/>
+    <title value="HCIM AllergieStatusCodelijst to allergy status"/>
+    <status value="active"/>
     <date value="2017-01-04T10:27:28.0292377+01:00"/>
     <publisher value="Nictiz"/>
     <contact>

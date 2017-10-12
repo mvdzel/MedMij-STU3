@@ -1,14 +1,15 @@
-﻿<?xml-model href="http://hl7.org/fhir/structuredefinition.sch" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
-<StructureDefinition xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://hl7.org/fhir http://hl7.org/fhir/structuredefinition.xsd" xmlns="http://hl7.org/fhir">
-   <meta>
-    <lastUpdated value="2017-05-22T13:45:41.53+02:00" />
+﻿<?xml-model href="http://hl7.org/fhir/STU3/structuredefinition.sch" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
+<StructureDefinition xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://hl7.org/fhir http://hl7.org/fhir/STU3/structuredefinition.xsd" xmlns="http://hl7.org/fhir">
+  <meta>
+    <lastUpdated value="2017-09-29T16:38:50.243+02:00" />
   </meta>
   <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-wg">
     <valueCode value="oo" />
   </extension>
   <url value="http://nictiz.nl/fhir/StructureDefinition/zib-MedicalAidRequest" />
+  <version value="1.0" />
   <name value="ZIB-MedicalAid-Request" />
-  <title value="ZIB MedicalAid Request" />
+  <title value="HCIM MedicalAid Request" />
   <status value="draft" />
   <date value="2017-05-22T13:24:34.1255241+02:00" />
   <publisher value="Nictiz" />
@@ -20,19 +21,19 @@
       <use value="work" />
     </telecom>
   </contact>
-  <description value="MedicalAid Request as defined by the Dutch Clinical Building Block (Dutch: Zorginformatiebouwsteen or ZIB) version 1.0.OverdrachtGeplandeZorgActiviteit. " />
+  <description value="MedicalAid Request as defined by the Dutch Health and Care Information models (Dutch: Zorginformatiebouwsteen or ZIB) version 1.0.OverdrachtGeplandeZorgActiviteit." />
   <purpose value="Recording planned appointments, referrals, treatments, diagnostic procedures, open orders and orders of which the results are not yet known gives every recipient, user or healthcare facility insight in the planned healthcare for this patient. This can prevent situations in which diagnostics and treatment can conflict with each other.&#xD;&#xA;This will give the recipient the option to place an order, cancel the order or act in any other way in accordance with their own policy.&#xD;&#xA;For orders that do not yet have results, the recipient is informed of the fact that potentially relevant results will be made available (which have to be requested)." />
   <copyright value="CC0" />
   <fhirVersion value="3.0.0" />
   <mapping>
-    <identity value="zib-overdrachtgeplandezorgactiviteit" />
-    <uri value="https://zibs.nl/wiki/OverdrachtVerrichting(NL)" />
-    <name value="Zorginformatiebouwsteen OverdrachtVerrichting" />
+    <identity value="hcim-plannedcareactivityfortransfer-v1.2.1-2015EN" />
+    <uri value="https://zibs.nl/wiki/PlannedCareActivityForTransfer-v1.2.1(2015EN)" />
+    <name value="HCIM PlannedCareActivityForTransfer-v1.2.1(2015EN)" />
   </mapping>
   <mapping>
-    <identity value="zib-medischhulpmiddel" />
-    <uri value="https://zibs.nl/wiki/MedischHulpmiddel(NL)" />
-    <name value="Zorginformatiebouwsteen MedischHulpmiddel" />
+    <identity value="hcim-medicaldevice-v1.2-2015EN" />
+    <uri value="https://zibs.nl/wiki/MedicalDevice-v1.2(2015EN)" />
+    <name value="HCIM MedicalDevice-v1.2(2015EN)" />
   </mapping>
   <kind value="resource" />
   <abstract value="false" />
@@ -40,7 +41,10 @@
   <baseDefinition value="http://hl7.org/fhir/StructureDefinition/DeviceRequest" />
   <derivation value="constraint" />
   <differential>
-    <element>
+    <element id="DeviceRequest">
+      <path value="DeviceRequest"/>
+    </element>
+    <element id="DeviceRequest.status.extension">
       <path value="DeviceRequest.status.extension" />
       <slicing>
         <discriminator>
@@ -58,23 +62,35 @@
         <profile value="http://nictiz.nl/fhir/StructureDefinition/zib-OrderStatus" />
       </type>
     </element>
-    <element>
-      <path value="DeviceRequest.code[x]"/>
+    <element id="DeviceRequest.status.extension:orderStatus.value[x]">
+      <path value="DeviceRequest.status.extension.valueCodeableConcept" />
+      <sliceName value="valueCodeableConcept" />
+      <binding>
+        <strength value="extensible" />
+        <description value="The status of the order." />
+        <valueSetReference>
+          <reference value="http://decor.nictiz.nl/fhir/ValueSet/2.16.840.1.113883.2.4.3.11.60.40.2.16.1.2--20150401000000" />
+        </valueSetReference>
+      </binding>
+    </element>
+    <element id="DeviceRequest.code[x]">
+      <path value="DeviceRequest.code[x]" />
+      <short value="ProductType" />
       <definition value="The code of the type of product." />
       <alias value="ProductType" />
       <type>
-        <code value="Reference"/>
-        <targetProfile value="http://nictiz.nl/fhir/StructureDefinition/zib-MedicalAidProduct"/>
+        <code value="Reference" />
+        <targetProfile value="http://nictiz.nl/fhir/StructureDefinition/zib-MedicalAidProduct" />
       </type>
       <type>
-        <code value="CodeableConcept"/>
+        <code value="CodeableConcept" />
       </type>
       <mapping>
-        <identity value="zib-medischhulpmiddel" />
+        <identity value="hcim-medicaldevice-v1.2-2015EN" />
         <map value="NL-CM:10.1.3" />
       </mapping>
     </element>
-    <element>
+    <element id="DeviceRequest.subject">
       <path value="DeviceRequest.subject" />
       <type>
         <code value="Reference" />
@@ -93,7 +109,7 @@
         <targetProfile value="http://nictiz.nl/fhir/StructureDefinition/zib-MedicalAidProduct" />
       </type>
     </element>
-    <element>
+    <element id="DeviceRequest.occurrence[x]">
       <path value="DeviceRequest.occurrence[x]" />
       <slicing>
         <discriminator>
@@ -103,48 +119,48 @@
         <rules value="open" />
       </slicing>
     </element>
-    <element>
+    <element id="DeviceRequest.occurrence[x]:occurrencePeriod">
       <path value="DeviceRequest.occurrence[x]" />
       <sliceName value="occurrencePeriod" />
       <type>
         <code value="Period" />
       </type>
     </element>
-    <element>
+    <element id="DeviceRequest.occurrence[x].start">
       <path value="DeviceRequest.occurrence[x].start" />
       <short value="StartDate" />
       <definition value="Planned or requested date. Clinical reminders can be used to indicate from when the procedure can take place. A vague date (such as only the month and year) is permitted." />
       <alias value="BeginDatum" />
       <mapping>
-        <identity value="zib-overdrachtgeplandezorgactiviteit" />
+        <identity value="hcim-plannedcareactivityfortransfer-v1.2.1-2015EN" />
         <map value="NL-CM:16.1.10" />
       </mapping>
     </element>
-    <element>
+    <element id="DeviceRequest.occurrence[x].end">
       <path value="DeviceRequest.occurrence[x].end" />
       <short value="EndDate" />
       <definition value="The planned end date of the procedure can be included as well if needed. Depending on the type of procedure, this can also be used to indicate before which time it has to have been completed." />
       <alias value="EindDatum" />
       <mapping>
-        <identity value="zib-overdrachtgeplandezorgactiviteit" />
+        <identity value="hcim-plannedcareactivityfortransfer-v1.2.1-2015EN" />
         <map value="NL-CM:16.1.11" />
       </mapping>
     </element>
-    <element>
-      <path value="DeviceRequest.occurrence[x]"/>
-      <sliceName value="occurrenceDateTime"/>
+    <element id="DeviceRequest.occurrence[x]">
+      <path value="DeviceRequest.occurrence[x]" />
+      <sliceName value="occurrenceDateTime" />
       <type>
-        <code value="dateTime"/>
+        <code value="dateTime" />
       </type>
     </element>
-    <element>
-      <path value="DeviceRequest.occurrence[x]"/>
-      <sliceName value="occurrenceTiming"/>
+    <element id="DeviceRequest.occurrence[x]:occurrenceTiming">
+      <path value="DeviceRequest.occurrence[x]" />
+      <sliceName value="occurrenceTiming" />
       <type>
-        <code value="Timing"/>
+        <code value="Timing" />
       </type>
     </element>
-    <element>
+    <element id="DeviceRequest.requester.agent">
       <path value="DeviceRequest.requester.agent" />
       <type>
         <code value="Reference" />
@@ -159,14 +175,14 @@
         <targetProfile value="http://fhir.nl/fhir/StructureDefinition/nl-core-organization" />
       </type>
     </element>
-    <element>
+    <element id="DeviceRequest.requester.onBehalfOf">
       <path value="DeviceRequest.requester.onBehalfOf" />
       <type>
         <code value="Reference" />
         <targetProfile value="http://fhir.nl/fhir/StructureDefinition/nl-core-organization" />
       </type>
     </element>
-    <element>
+    <element id="DeviceRequest.performer">
       <path value="DeviceRequest.performer" />
       <type>
         <code value="Reference" />
@@ -193,7 +209,7 @@
         <targetProfile value="http://fhir.nl/fhir/StructureDefinition/nl-core-healthcareservice" />
       </type>
     </element>
-    <element>
+    <element id="DeviceRequest.note.author[x]">
       <path value="DeviceRequest.note.author[x]" />
       <type>
         <code value="Reference" />

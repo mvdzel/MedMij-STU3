@@ -4,15 +4,24 @@
         <lastUpdated value="2017-06-08T17:19:04.007+02:00"/>
     </meta>
     <url value="http://nictiz.nl/fhir/StructureDefinition/zib-MedicationAdministration-DoubleCheckPerformed"/>
+    <version value="1.0"/>
     <name value="ZIB-Double-Check-Performed"/>
-    <title value="ZIB Double Check Performed"/>
+    <title value="HCIM Double Check Performed"/>
     <status value="draft"/>
     <date value="2017-09-08T15:28:47.0782827+02:00"/>
     <publisher value="Nictiz"/>
+    <contact>
+        <name value="Nictiz"/>
+        <telecom>
+            <system value="email"/>
+            <value value="info@nictiz.nl"/>
+            <use value="work"/>
+        </telecom>
+    </contact>
     <description value="Was a double check performed prior to the administration? This is only legally required for certain medication"/>
     <purpose value="Indicates if a double check was performed prior to the administration."/>
     <copyright value="CC0"/>
-    <fhirVersion value="3.0.0"/>
+    <fhirVersion value="3.0.1"/>
     <kind value="complex-type"/>
     <abstract value="false"/>
     <contextType value="resource"/>
@@ -23,7 +32,6 @@
     <differential>
         <element id="Extension">
             <path value="Extension"/>
-            <comment value=" "/>
         </element>
         <element id="Extension.url">
             <path value="Extension.url"/>

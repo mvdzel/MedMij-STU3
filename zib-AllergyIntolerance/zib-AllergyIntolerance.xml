@@ -1,14 +1,14 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<?xml-model href="http://hl7.org/fhir/STU3/structuredefinition.sch" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
-<StructureDefinition xmlns="http://hl7.org/fhir" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://hl7.org/fhir http://hl7.org/fhir/STU3/structuredefinition.xsd">
+﻿<?xml-model href="http://hl7.org/fhir/STU3/structuredefinition.sch" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
+<StructureDefinition xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://hl7.org/fhir http://hl7.org/fhir/STU3/structuredefinition.xsd" xmlns="http://hl7.org/fhir">
   <id value="0f01e7ed-99b5-4781-8e06-0b92fef40c71" />
   <meta>
     <versionId value="1" />
-    <lastUpdated value="2017-04-13T17:10:45.215+02:00" />
+    <lastUpdated value="2017-09-29T14:09:07.623+02:00" />
   </meta>
   <url value="http://nictiz.nl/fhir/StructureDefinition/zib-AllergyIntolerance" />
+  <version value="1.0" />
   <name value="ZIB-AllergyIntolerance" />
-  <title value="ZIB AllergyIntolerance" />
+  <title value="HCIM AllergyIntolerance" />
   <status value="draft" />
   <date value="2016-12-09T08:27:09.849+00:00" />
   <publisher value="Nictiz" />
@@ -20,26 +20,26 @@
       <use value="work" />
     </telecom>
   </contact>
-  <description value="An AllergyIntolerance resource as defined by the Dutch Clinical Building Block (Dutch: Zorginformatiebouwsteen or ZIB) version 1.0" />
+  <description value="An AllergyIntolerance resource as defined by the Dutch Health and Care Information models (Dutch: Zorginformatiebouwsteen or ZIB) version 1.0" />
   <copyright value="CC0" />
   <fhirVersion value="3.0.0" />
   <mapping>
-    <identity value="zib-allergieintolerantie" />
-    <uri value="https://zibs.nl/wiki/AllergieIntolerantie(NL)" />
-    <name value="Zorginformatiebouwsteen AllergieIntolerantie" />
+    <identity value="hcim-allergyintolerance-v1.0.2-2015EN" />
+    <uri value="https://zibs.nl/wiki/AllergyIntolerance-v1.0.2(2015EN)" />
+    <name value="HCIM AllergyIntolerance-v1.0.2(2015EN)" />
   </mapping>
   <kind value="resource" />
   <abstract value="false" />
   <type value="AllergyIntolerance" />
   <baseDefinition value="http://hl7.org/fhir/StructureDefinition/AllergyIntolerance" />
-  <derivation value="constraint"/>
+  <derivation value="constraint" />
   <differential>
     <element id="AllergyIntolerance">
       <path value="AllergyIntolerance" />
       <short value="AllergyIntolerance" />
       <alias value="AllergieIntolerantie" />
       <mapping>
-        <identity value="zib-allergieintolerantie" />
+        <identity value="hcim-allergyintolerance-v1.0.2-2015EN" />
         <map value="NL-CM:8.2.1" />
       </mapping>
     </element>
@@ -47,15 +47,6 @@
       <path value="AllergyIntolerance.identifier" />
       <short value="Identifier" />
       <alias value="Identificatie" />
-    </element>
-    <element id="AllergyIntolerance.clinicalStatus">
-      <path value="AllergyIntolerance.clinicalStatus" />
-      <short value="AllergyStatus" />
-      <alias value="AllergieStatus" />
-      <mapping>
-        <identity value="zib-allergieintolerantie" />
-        <map value="NL-CM:8.2.5" />
-      </mapping>
     </element>
     <element id="AllergyIntolerance.clinicalStatus.extension">
       <path value="AllergyIntolerance.clinicalStatus.extension" />
@@ -70,9 +61,9 @@
     <element id="AllergyIntolerance.clinicalStatus.extension">
       <path value="AllergyIntolerance.clinicalStatus.extension" />
       <sliceName value="AllergieStatusCodelijst" />
-      <short value="Provides the specific CBB code for a FHIR element that has a required binding to a FHIR ValueSet" />
+      <short value="AllergyStatus" />
       <definition value="Defines a more specific value to a code. Especially useful for FHIR's required ValueSets. These extensions are primarily used on codes bound to a required value set, where you would like to use a more specific code than the codes in the bounded value set." />
-      <min value="0" />
+      <alias value="AllergieStatus" />
       <max value="1" />
       <type>
         <code value="Extension" />
@@ -82,18 +73,13 @@
         <strength value="extensible" />
         <description value="AllergieStatusCodelijst" />
         <valueSetReference>
-          <reference value="http://decor.nictiz.nl/fhir/ValueSet/2.16.840.1.113883.2.4.3.11.60.40.2.8.2.3--20150401000000"/>
-          <display value="AllergieStatusCodelijst"/>
+          <reference value="http://decor.nictiz.nl/fhir/ValueSet/2.16.840.1.113883.2.4.3.11.60.40.2.8.2.3--20150401000000" />
+          <display value="AllergieStatusCodelijst" />
         </valueSetReference>
       </binding>
-    </element>
-    <element id="AllergyIntolerance.category">
-      <path value="AllergyIntolerance.category" />
-      <short value="AllergyCategory" />
-      <alias value="AllergieCategorie" />
       <mapping>
-        <identity value="zib-allergieintolerantie" />
-        <map value="NL-CM:8.2.4" />
+        <identity value="hcim-allergyintolerance-v1.0.2-2015EN" />
+        <map value="NL-CM:8.2.5" />
       </mapping>
     </element>
     <element id="AllergyIntolerance.category.extension">
@@ -106,13 +92,12 @@
         <rules value="open" />
       </slicing>
     </element>
-    <element id="AllergyIntolerance.category.extension.AllergieCategorieCodelijst">
+    <element id="AllergyIntolerance.category.extension:AllergieCategorieCodelijst">
       <path value="AllergyIntolerance.category.extension" />
       <sliceName value="AllergieCategorieCodelijst" />
-      <short value="Provides the specific CBB code for a FHIR element that has a required binding to a FHIR ValueSet" />
+      <short value="AllergyCategory" />
       <definition value="Defines a more specific value to a code. Especially useful for FHIR's required ValueSets. These extensions are primarily used on codes bound to a required value set, where you would like to use a more specific code than the codes in the bounded value set." />
-      <min value="0" />
-      <max value="*" />
+      <alias value="AllergieCategorie" />
       <type>
         <code value="Extension" />
         <profile value="http://nictiz.nl/fhir/StructureDefinition/code-specification" />
@@ -121,17 +106,21 @@
         <strength value="extensible" />
         <description value="AllergieCategorieCodelijst" />
         <valueSetReference>
-          <reference value="http://decor.nictiz.nl/fhir/ValueSet/2.16.840.1.113883.2.4.3.11.60.40.2.8.2.2--20150401000000"/>
-          <display value="AllergieCategorieCodelijst"/>
+          <reference value="http://decor.nictiz.nl/fhir/ValueSet/2.16.840.1.113883.2.4.3.11.60.40.2.8.2.2--20150401000000" />
+          <display value="AllergieCategorieCodelijst" />
         </valueSetReference>
       </binding>
+      <mapping>
+        <identity value="hcim-allergyintolerance-v1.0.2-2015EN" />
+        <map value="NL-CM:8.2.4" />
+      </mapping>
     </element>
     <element id="AllergyIntolerance.criticality">
       <path value="AllergyIntolerance.criticality" />
       <short value="CriticalExtent" />
       <alias value="MateVanKritiekZijn" />
       <mapping>
-        <identity value="zib-allergieintolerantie" />
+        <identity value="hcim-allergyintolerance-v1.0.2-2015EN" />
         <map value="NL-CM:8.2.7" />
       </mapping>
     </element>
@@ -147,7 +136,7 @@
         </valueSetReference>
       </binding>
       <mapping>
-        <identity value="zib-allergieintolerantie" />
+        <identity value="hcim-allergyintolerance-v1.0.2-2015EN" />
         <map value="NL-CM:8.2.2" />
       </mapping>
     </element>
@@ -165,7 +154,7 @@
       <short value="StartDateTime" />
       <alias value="BeginDatumTijd" />
       <mapping>
-        <identity value="zib-allergieintolerantie" />
+        <identity value="hcim-allergyintolerance-v1.0.2-2015EN" />
         <map value="NL-CM:8.2.6" />
       </mapping>
     </element>
@@ -177,6 +166,7 @@
     <element id="AllergyIntolerance.asserter">
       <path value="AllergyIntolerance.asserter" />
       <short value="Informant" />
+      <alias value="Informant"/>
       <type>
         <code value="Reference" />
         <targetProfile value="http://fhir.nl/fhir/StructureDefinition/nl-core-patient" />
@@ -195,18 +185,14 @@
       <short value="LastReactionDateTime" />
       <alias value="LaatsteReactieDatumTijd" />
       <mapping>
-        <identity value="zib-allergieintolerantie" />
+        <identity value="hcim-allergyintolerance-v1.0.2-2015EN" />
         <map value="NL-CM:8.2.8" />
       </mapping>
     </element>
-    <element id="AllergyIntolerance.note">
-      <path value="AllergyIntolerance.note" />
-      <short value="Explanation" />
-      <alias value="Toelichting" />
-    </element>
     <element id="AllergyIntolerance.note.author">
       <path value="AllergyIntolerance.note.author[x]" />
-      <short value="Auteur" />
+      <short value="Author" />
+      <alias value="Auteur" />
       <type>
         <code value="string" />
       </type>
@@ -228,7 +214,7 @@
       <short value="Explanation" />
       <alias value="Toelichting" />
       <mapping>
-        <identity value="zib-allergieintolerantie" />
+        <identity value="hcim-allergyintolerance-v1.0.2-2015EN" />
         <map value="NL-CM:8.2.9" />
       </mapping>
     </element>
@@ -237,7 +223,7 @@
       <short value="Reaction" />
       <alias value="Reactie" />
       <mapping>
-        <identity value="zib-allergieintolerantie" />
+        <identity value="hcim-allergyintolerance-v1.0.2-2015EN" />
         <map value="NL-CM:8.2.10" />
       </mapping>
     </element>
@@ -255,15 +241,13 @@
       <path value="AllergyIntolerance.reaction.extension" />
       <sliceName value="Duration" />
       <short value="Duration" />
-      <definition value="The amount of time that the Adverse Reaction persisted." />
       <alias value="ReactieDuur" />
-      <max value="1" />
       <type>
         <code value="Extension" />
-        <profile value="http://hl7.org/fhir/StructureDefinition/allergyintolerance-duration"/>
+        <profile value="http://hl7.org/fhir/StructureDefinition/allergyintolerance-duration" />
       </type>
       <mapping>
-        <identity value="zib-allergieintolerantie" />
+        <identity value="hcim-allergyintolerance-v1.0.2-2015EN" />
         <map value="NL-CM:8.2.16" />
       </mapping>
     </element>
@@ -273,24 +257,26 @@
       <short value="Certainty that the substance was the cause of the manifestation" />
       <definition value="Statement about the degree of clinical certainty that the specific substance was the cause of the manifestation in this reaction event." />
       <comment value="When certainty is missing, it means no information exists (although it could be in narrative).  By contrast, the unknown code is used when there is an explicit assertion that certainty is not known, such as when a patient eats a meal and it is unknown which food caused the reaction." />
-      <alias value="Waarschijnlijkheid"/>
-      <max value="1" />
+      <alias value="Waarschijnlijkheid" />
       <type>
         <code value="Extension" />
         <profile value="http://nictiz.nl/fhir/StructureDefinition/zib-AllergyIntolerance-Reaction-Certainty" />
       </type>
-      <binding>
-        <strength value="extensible"/>
-        <description value="Indication of the probability that the substance described in the ‘SpecificSubstance' concept caused the reaction."/>
-        <valueSetReference>
-          <reference value="http://decor.nictiz.nl/fhir/ValueSet/2.16.840.1.113883.2.4.3.11.60.40.2.8.2.8--20150401000000"/>
-          <display value="WaarschijnlijkheidCodelijst"/>
-        </valueSetReference>
-      </binding>
       <mapping>
-        <identity value="zib-allergieintolerantie" />
+        <identity value="hcim-allergyintolerance-v1.0.2-2015EN" />
         <map value="NL-CM:8.2.18" />
       </mapping>
+    </element>
+    <element id="AllergyIntolerance.reaction.extension:Certainty.value[x]">
+      <path value="AllergyIntolerance.reaction.extension.valueCodeableConcept" />
+      <sliceName value="valueCodeableConcept" />
+      <binding>
+        <strength value="extensible" />
+        <description value="Indication of the probability that the substance described in the ‘SpecificSubstance' concept caused the reaction." />
+        <valueSetReference>
+          <reference value="http://decor.nictiz.nl/fhir/ValueSet/2.16.840.1.113883.2.4.3.11.60.40.2.8.2.8--20150401000000" />
+        </valueSetReference>
+      </binding>
     </element>
     <element id="AllergyIntolerance.reaction.substance">
       <path value="AllergyIntolerance.reaction.substance" />
@@ -304,7 +290,7 @@
         </valueSetReference>
       </binding>
       <mapping>
-        <identity value="zib-allergieintolerantie" />
+        <identity value="hcim-allergyintolerance-v1.0.2-2015EN" />
         <map value="NL-CM:8.2.12" />
       </mapping>
     </element>
@@ -320,7 +306,7 @@
         </valueSetReference>
       </binding>
       <mapping>
-        <identity value="zib-allergieintolerantie" />
+        <identity value="hcim-allergyintolerance-v1.0.2-2015EN" />
         <map value="NL-CM:8.2.11" />
       </mapping>
     </element>
@@ -329,7 +315,7 @@
       <short value="ReactionDescription" />
       <alias value="ReactieBeschrijving" />
       <mapping>
-        <identity value="zib-allergieintolerantie" />
+        <identity value="hcim-allergyintolerance-v1.0.2-2015EN" />
         <map value="NL-CM:8.2.13" />
       </mapping>
     </element>
@@ -338,7 +324,7 @@
       <short value="ReactionTime" />
       <alias value="ReactieTijdstip" />
       <mapping>
-        <identity value="zib-allergieintolerantie" />
+        <identity value="hcim-allergyintolerance-v1.0.2-2015EN" />
         <map value="NL-CM:8.2.17" />
       </mapping>
     </element>
@@ -347,7 +333,7 @@
       <short value="Severity" />
       <alias value="Ernst" />
       <mapping>
-        <identity value="zib-allergieintolerantie" />
+        <identity value="hcim-allergyintolerance-v1.0.2-2015EN" />
         <map value="NL-CM:8.2.14" />
       </mapping>
     </element>
@@ -363,7 +349,7 @@
         </valueSetReference>
       </binding>
       <mapping>
-        <identity value="zib-allergieintolerantie" />
+        <identity value="hcim-allergyintolerance-v1.0.2-2015EN" />
         <map value="NL-CM:8.2.15" />
       </mapping>
     </element>

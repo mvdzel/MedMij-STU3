@@ -1,0 +1,710 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Bundle xmlns="http://hl7.org/fhir">
+    <id value="6d79e28e-e3b5-4e10-9345-4b0100a09829"/>
+    <type value="batch-response"/>
+    <entry>
+        <resource>
+            <Bundle>
+                <id value="7490668e-c51a-4323-86ee-81393fc28a"/>
+                <meta>
+                    <lastUpdated value="2017-10-04T09:37:33Z"/>
+                </meta>
+                <type value="searchset"/>
+                <total value="0"/>
+                <link>
+                    <relation value="self"/>
+                    <url value="http://test.fhir.org/r3/Patient?_format=application/fhir+xml&amp;search-id=7bacbab0-6ce9-4024-b433-19d0e4ae29&amp;&amp;identifier=%5Bpatient%2Did%5D&amp;_include=Patient%3Ageneral%2Dpractitioner&amp;_sort=_id"/>
+                </link>
+            </Bundle>
+        </resource>
+        <request>
+            <method value="GET"/>
+            <url value="/Patient?identifier=123456789&amp;_include=Patient:general-practitioner"/>
+        </request>
+        <response>
+            <status value="200"/>
+            <etag value="W/"/>
+            <lastModified value="1899-12-30T00:00:00Z"/>
+        </response>
+    </entry>
+    <entry>
+        <resource>
+            <Bundle>
+                <id value="ba5b54c2-ca85-43f4-9815-6da9e0825b"/>
+                <meta>
+                    <lastUpdated value="2017-10-04T09:37:33Z"/>
+                </meta>
+                <type value="searchset"/>
+                <total value="0"/>
+                <link>
+                    <relation value="self"/>
+                    <url value="http://test.fhir.org/r3/Coverage?_format=application/fhir+xml&amp;search-id=3009d449-0135-437d-8812-328235eddb&amp;&amp;subscriber:Patient.identifier=%5Bpatient%2Did%5D&amp;_include=Coverage%3Apayor%3APatient%2COrganization&amp;_sort=_id"/>
+                </link>
+            </Bundle>
+        </resource>
+        <request>
+            <method value="GET"/>
+            <url value="/Coverage?subscriber:Patient.identifier=123456789&amp;_include=Coverage:payor:Patient,Organization"/>
+        </request>
+        <response>
+            <status value="200"/>
+            <etag value="W/"/>
+            <lastModified value="1899-12-30T00:00:00Z"/>
+        </response>
+    </entry>
+    <entry>
+        <resource>
+            <Bundle>
+                <id value="25e95995-c645-4ecf-92d7-6034c37b90"/>
+                <meta>
+                    <lastUpdated value="2017-10-04T09:37:33Z"/>
+                </meta>
+                <type value="searchset"/>
+                <total value="0"/>
+                <link>
+                    <relation value="self"/>
+                    <url value="http://test.fhir.org/r3/Consent?_format=application/fhir+xml&amp;search-id=c3885ca6-fc5b-43db-9c00-19828afef5&amp;&amp;patient.identifier=%5Bpatient%2Did%5D&amp;category=http%3A//snomed.info/sct%7C11291000146105&amp;_sort=_id"/>
+                </link>
+            </Bundle>
+        </resource>
+        <request>
+            <method value="GET"/>
+            <url value="/Consent?patient.identifier=123456789&amp;category=http://snomed.info/sct|11291000146105"/>
+        </request>
+        <response>
+            <status value="200"/>
+            <etag value="W/"/>
+            <lastModified value="1899-12-30T00:00:00Z"/>
+        </response>
+    </entry>
+    <entry>
+        <resource>
+            <Bundle>
+                <id value="5f5b9f52-694a-4982-8e68-a232f781a7"/>
+                <meta>
+                    <lastUpdated value="2017-10-04T09:37:33Z"/>
+                </meta>
+                <type value="searchset"/>
+                <total value="0"/>
+                <link>
+                    <relation value="self"/>
+                    <url value="http://test.fhir.org/r3/Consent?_format=application/fhir+xml&amp;search-id=ddafd66b-77d6-4e85-8b67-b4d81712b1&amp;&amp;patient.identifier=%5Bpatient%2Did%5D&amp;category=http%3A//snomed.info/sct%7C11291000146105&amp;_sort=_id"/>
+                </link>
+            </Bundle>
+        </resource>
+        <request>
+            <method value="GET"/>
+            <url value="/Consent?patient.identifier=123456789&amp;category=http://snomed.info/sct|11291000146105"/>
+        </request>
+        <response>
+            <status value="200"/>
+            <etag value="W/"/>
+            <lastModified value="1899-12-30T00:00:00Z"/>
+        </response>
+    </entry>
+    <entry>
+        <resource>
+            <OperationOutcome>
+                <text>
+                    <status value="generated"/>
+                    <div xmlns="http://www.w3.org/1999/xhtml">
+                        <p>Access violation at address 000000000140D19E in module 'FHIRServer.exe'. Read of address 00000000000000D0</p>
+                    </div>
+                </text>
+                <issue>
+                    <severity value="error"/>
+                    <diagnostics value="Access violation at address 000000000140D19E in module 'FHIRServer.exe'. Read of address 00000000000000D0"/>
+                </issue>
+            </OperationOutcome>
+        </resource>
+        <request>
+            <method value="GET"/>
+            <url value="/Observation/$lastn?patient.identifier=123456789&amp;category=http://snomed.info/sct|118228005,http://snomed.info/sct|364644000"/>
+        </request>
+        <response>
+            <status value="500"/>
+        </response>
+    </entry>
+    <entry>
+        <resource>
+            <Bundle>
+                <id value="7314cdf4-4cc8-42f3-8669-a637eec339"/>
+                <meta>
+                    <lastUpdated value="2017-10-04T09:37:34Z"/>
+                </meta>
+                <type value="searchset"/>
+                <total value="0"/>
+                <link>
+                    <relation value="self"/>
+                    <url value="http://test.fhir.org/r3/Condition?_format=application/fhir+xml&amp;search-id=8b2b89a9-bd5a-4391-b79b-f05580d433&amp;&amp;patient.identifier=%5Bpatient%2Did%5D&amp;category:in=http%3A//decor.nictiz.nl/fhir/ValueSet/2.16.840.1.113883.2.4.3.11.60.40.2.5.1.1%2D%2D20150401000000&amp;_sort=_id"/>
+                </link>
+                <entry>
+                    <resource>
+                        <OperationOutcome>
+                            <issue>
+                                <severity value="warning"/>
+                                <code value="not-found"/>
+                                <details>
+                                    <text value="The value set &quot;http://decor.nictiz.nl/fhir/ValueSet/2.16.840.1.113883.2.4.3.11.60.40.2.5.1.1--20150401000000&quot; is not indexed, and cannot be searched on"/>
+                                </details>
+                                <location value="http.url.category"/>
+                            </issue>
+                        </OperationOutcome>
+                    </resource>
+                    <search>
+                        <mode value="outcome"/>
+                    </search>
+                </entry>
+            </Bundle>
+        </resource>
+        <request>
+            <method value="GET"/>
+            <url value="/Condition?patient.identifier=123456789&amp;category:in=http://decor.nictiz.nl/fhir/ValueSet/2.16.840.1.113883.2.4.3.11.60.40.2.5.1.1--20150401000000"/>
+        </request>
+        <response>
+            <status value="200"/>
+            <etag value="W/"/>
+            <lastModified value="1899-12-30T00:00:00Z"/>
+        </response>
+    </entry>
+    <entry>
+        <resource>
+            <OperationOutcome>
+                <text>
+                    <status value="generated"/>
+                    <div xmlns="http://www.w3.org/1999/xhtml">
+                        <p>Access violation at address 000000000140D19E in module 'FHIRServer.exe'. Read of address 00000000000000D0</p>
+                    </div>
+                </text>
+                <issue>
+                    <severity value="error"/>
+                    <diagnostics value="Access violation at address 000000000140D19E in module 'FHIRServer.exe'. Read of address 00000000000000D0"/>
+                </issue>
+            </OperationOutcome>
+        </resource>
+        <request>
+            <method value="GET"/>
+            <url value="/Observation/$lastn?patient.identifier=123456789&amp;code=http://snomed.info/sct|365508006"/>
+        </request>
+        <response>
+            <status value="500"/>
+        </response>
+    </entry>
+    <entry>
+        <resource>
+            <Bundle>
+                <id value="468f5676-c0d8-4d92-8c8e-671b505a05"/>
+                <meta>
+                    <lastUpdated value="2017-10-04T09:37:34Z"/>
+                </meta>
+                <type value="searchset"/>
+                <total value="0"/>
+                <link>
+                    <relation value="self"/>
+                    <url value="http://test.fhir.org/r3/Observation?_format=application/fhir+xml&amp;search-id=0c8de9ae-c63f-4cb3-b683-edf94e95fd&amp;&amp;patient.identifier=%5Bpatient%2Did%5D&amp;code=http%3A//snomed.info/sct%7C228366006&amp;_sort=_id"/>
+                </link>
+            </Bundle>
+        </resource>
+        <request>
+            <method value="GET"/>
+            <url value="/Observation?patient.identifier=123456789&amp;code=http://snomed.info/sct|228366006"/>
+        </request>
+        <response>
+            <status value="200"/>
+            <etag value="W/"/>
+            <lastModified value="1899-12-30T00:00:00Z"/>
+        </response>
+    </entry>
+    <entry>
+        <resource>
+            <Bundle>
+                <id value="7ed156a5-6339-4649-9dc9-753aef58db"/>
+                <meta>
+                    <lastUpdated value="2017-10-04T09:37:34Z"/>
+                </meta>
+                <type value="searchset"/>
+                <total value="0"/>
+                <link>
+                    <relation value="self"/>
+                    <url value="http://test.fhir.org/r3/Observation?_format=application/fhir+xml&amp;search-id=5c4de1da-e1c3-41dd-a123-18cfadd863&amp;&amp;patient.identifier=%5Bpatient%2Did%5D&amp;code=http%3A//snomed.info/sct%7C228273003&amp;_sort=_id"/>
+                </link>
+            </Bundle>
+        </resource>
+        <request>
+            <method value="GET"/>
+            <url value="/Observation?patient.identifier=123456789&amp;code=http://snomed.info/sct|228273003"/>
+        </request>
+        <response>
+            <status value="200"/>
+            <etag value="W/"/>
+            <lastModified value="1899-12-30T00:00:00Z"/>
+        </response>
+    </entry>
+    <entry>
+        <resource>
+            <Bundle>
+                <id value="dbf54b23-dca3-40fa-bd31-b2767a2611"/>
+                <meta>
+                    <lastUpdated value="2017-10-04T09:37:34Z"/>
+                </meta>
+                <type value="searchset"/>
+                <total value="0"/>
+                <link>
+                    <relation value="self"/>
+                    <url value="http://test.fhir.org/r3/Observation?_format=application/fhir+xml&amp;search-id=426acb12-70bc-411e-b1d4-e515ed32c8&amp;&amp;patient.identifier=%5Bpatient%2Did%5D&amp;code=http%3A//snomed.info/sct%7C365980008&amp;_sort=_id"/>
+                </link>
+            </Bundle>
+        </resource>
+        <request>
+            <method value="GET"/>
+            <url value="/Observation?patient.identifier=123456789&amp;code=http://snomed.info/sct|365980008"/>
+        </request>
+        <response>
+            <status value="200"/>
+            <etag value="W/"/>
+            <lastModified value="1899-12-30T00:00:00Z"/>
+        </response>
+    </entry>
+    <entry>
+        <resource>
+            <Bundle>
+                <id value="20e04934-9e4d-4cbd-8ab7-63393dd25d"/>
+                <meta>
+                    <lastUpdated value="2017-10-04T09:37:35Z"/>
+                </meta>
+                <type value="searchset"/>
+                <total value="0"/>
+                <link>
+                    <relation value="self"/>
+                    <url value="http://test.fhir.org/r3/NutritionOrder?_format=application/fhir+xml&amp;search-id=86211b3b-dcc3-4c6c-9600-84bbadd3e5&amp;&amp;patient.identifier=%5Bpatient%2Did%5D&amp;status=active&amp;_sort=_id"/>
+                </link>
+            </Bundle>
+        </resource>
+        <request>
+            <method value="GET"/>
+            <url value="/NutritionOrder?patient.identifier=123456789&amp;status=active"/>
+        </request>
+        <response>
+            <status value="200"/>
+            <etag value="W/"/>
+            <lastModified value="1899-12-30T00:00:00Z"/>
+        </response>
+    </entry>
+    <entry>
+        <resource>
+            <Bundle>
+                <id value="0072f2e1-a2b3-445f-8ee6-b16fe47ed2"/>
+                <meta>
+                    <lastUpdated value="2017-10-04T09:37:35Z"/>
+                </meta>
+                <type value="searchset"/>
+                <total value="0"/>
+                <link>
+                    <relation value="self"/>
+                    <url value="http://test.fhir.org/r3/Flag?_format=application/fhir+xml&amp;search-id=d7247bde-44ea-4b96-9785-c6985018ab&amp;&amp;patient.identifier=%5Bpatient%2Did%5D&amp;_sort=_id"/>
+                </link>
+            </Bundle>
+        </resource>
+        <request>
+            <method value="GET"/>
+            <url value="/Flag?patient.identifier=123456789"/>
+        </request>
+        <response>
+            <status value="200"/>
+            <etag value="W/"/>
+            <lastModified value="1899-12-30T00:00:00Z"/>
+        </response>
+    </entry>
+    <entry>
+        <resource>
+            <Bundle>
+                <id value="47a26424-b02d-4810-922e-546ae93b42"/>
+                <meta>
+                    <lastUpdated value="2017-10-04T09:37:35Z"/>
+                </meta>
+                <type value="searchset"/>
+                <total value="0"/>
+                <link>
+                    <relation value="self"/>
+                    <url value="http://test.fhir.org/r3/AllergyIntolerance?_format=application/fhir+xml&amp;search-id=25812f80-487d-46d8-8d4f-4de255cc41&amp;&amp;patient.identifier=%5Bpatient%2Did%5D&amp;_sort=_id"/>
+                </link>
+            </Bundle>
+        </resource>
+        <request>
+            <method value="GET"/>
+            <url value="/AllergyIntolerance?patient.identifier=123456789"/>
+        </request>
+        <response>
+            <status value="200"/>
+            <etag value="W/"/>
+            <lastModified value="1899-12-30T00:00:00Z"/>
+        </response>
+    </entry>
+    <entry>
+        <resource>
+            <Bundle>
+                <id value="e7ee466e-210c-4887-ba20-627e4b3633"/>
+                <meta>
+                    <lastUpdated value="2017-10-04T09:37:35Z"/>
+                </meta>
+                <type value="searchset"/>
+                <total value="0"/>
+                <link>
+                    <relation value="self"/>
+                    <url value="http://test.fhir.org/r3/MedicationStatement?_format=application/fhir+xml&amp;search-id=34ac6b1f-2adc-4d49-8911-b2d85f7814&amp;&amp;patient.identifier=%5Bpatient%2Did%5D&amp;status=active&amp;category=urn%3Aoid%3A2.16.840.1.113883.2.4.3.11.60.20.77.5.3%7C6&amp;_sort=_id"/>
+                </link>
+            </Bundle>
+        </resource>
+        <request>
+            <method value="GET"/>
+            <url value="/MedicationStatement?patient.identifier=123456789&amp;status=active&amp;category=urn:oid:2.16.840.1.113883.2.4.3.11.60.20.77.5.3|6&amp;_include:MedicationStatement:medication"/>
+        </request>
+        <response>
+            <status value="200"/>
+            <etag value="W/"/>
+            <lastModified value="1899-12-30T00:00:00Z"/>
+        </response>
+    </entry>
+    <entry>
+        <resource>
+            <Bundle>
+                <id value="adb1c238-09ee-4969-8ee2-522eb51a75"/>
+                <meta>
+                    <lastUpdated value="2017-10-04T09:37:35Z"/>
+                </meta>
+                <type value="searchset"/>
+                <total value="0"/>
+                <link>
+                    <relation value="self"/>
+                    <url value="http://test.fhir.org/r3/MedicationRequest?_format=application/fhir+xml&amp;search-id=115a3c39-0a82-4e14-a411-f6148db33b&amp;&amp;patient.identifier=%5Bpatient%2Did%5D&amp;status=active&amp;category=http%3A//snomed.info/sct%7C16076005&amp;_sort=_id"/>
+                </link>
+            </Bundle>
+        </resource>
+        <request>
+            <method value="GET"/>
+            <url value="/MedicationRequest?patient.identifier=123456789&amp;status=active&amp;category=http://snomed.info/sct|16076005&amp;_include:MedicationRequest:medication"/>
+        </request>
+        <response>
+            <status value="200"/>
+            <etag value="W/"/>
+            <lastModified value="1899-12-30T00:00:00Z"/>
+        </response>
+    </entry>
+    <entry>
+        <resource>
+            <Bundle>
+                <id value="19f0543b-2ce6-468d-9ecc-af0428da65"/>
+                <meta>
+                    <lastUpdated value="2017-10-04T09:37:36Z"/>
+                </meta>
+                <type value="searchset"/>
+                <total value="0"/>
+                <link>
+                    <relation value="self"/>
+                    <url value="http://test.fhir.org/r3/DeviceUseStatement?_format=application/fhir+xml&amp;search-id=5da5d8c7-6352-4485-b081-302ca93149&amp;&amp;patient.identifier=%5Bpatient%2Did%5D&amp;_include=DeviceUseStatement%3Adevice&amp;_sort=_id"/>
+                </link>
+            </Bundle>
+        </resource>
+        <request>
+            <method value="GET"/>
+            <url value="/DeviceUseStatement?patient.identifier=123456789&amp;_include=DeviceUseStatement:device"/>
+        </request>
+        <response>
+            <status value="200"/>
+            <etag value="W/"/>
+            <lastModified value="1899-12-30T00:00:00Z"/>
+        </response>
+    </entry>
+    <entry>
+        <resource>
+            <Bundle>
+                <id value="7ceb38c0-4316-41ec-a4ea-c035d45952"/>
+                <meta>
+                    <lastUpdated value="2017-10-04T09:37:36Z"/>
+                </meta>
+                <type value="searchset"/>
+                <total value="0"/>
+                <link>
+                    <relation value="self"/>
+                    <url value="http://test.fhir.org/r3/Immunization?_format=application/fhir+xml&amp;search-id=c5f2b231-3459-45b4-8059-a67569782c&amp;&amp;patient.identifier=%5Bpatient%2Did%5D&amp;status=completed&amp;_sort=_id"/>
+                </link>
+            </Bundle>
+        </resource>
+        <request>
+            <method value="GET"/>
+            <url value="/Immunization?patient.identifier=123456789&amp;status=completed"/>
+        </request>
+        <response>
+            <status value="200"/>
+            <etag value="W/"/>
+            <lastModified value="1899-12-30T00:00:00Z"/>
+        </response>
+    </entry>
+    <entry>
+        <resource>
+            <OperationOutcome>
+                <text>
+                    <status value="generated"/>
+                    <div xmlns="http://www.w3.org/1999/xhtml">
+                        <p>Access violation at address 000000000140D19E in module 'FHIRServer.exe'. Read of address 00000000000000D0</p>
+                    </div>
+                </text>
+                <issue>
+                    <severity value="error"/>
+                    <diagnostics value="Access violation at address 000000000140D19E in module 'FHIRServer.exe'. Read of address 00000000000000D0"/>
+                </issue>
+            </OperationOutcome>
+        </resource>
+        <request>
+            <method value="GET"/>
+            <url value="/Observation/$lastn?patient.identifier=123456789&amp;code=http://loinc.org|85354-9"/>
+        </request>
+        <response>
+            <status value="500"/>
+        </response>
+    </entry>
+    <entry>
+        <resource>
+            <OperationOutcome>
+                <text>
+                    <status value="generated"/>
+                    <div xmlns="http://www.w3.org/1999/xhtml">
+                        <p>Access violation at address 000000000140D19E in module 'FHIRServer.exe'. Read of address 00000000000000D0</p>
+                    </div>
+                </text>
+                <issue>
+                    <severity value="error"/>
+                    <diagnostics value="Access violation at address 000000000140D19E in module 'FHIRServer.exe'. Read of address 00000000000000D0"/>
+                </issue>
+            </OperationOutcome>
+        </resource>
+        <request>
+            <method value="GET"/>
+            <url value="/Observation/$lastn?patient.identifier=123456789&amp;code=http://loinc.org|29463-7"/>
+        </request>
+        <response>
+            <status value="500"/>
+        </response>
+    </entry>
+    <entry>
+        <resource>
+            <OperationOutcome>
+                <text>
+                    <status value="generated"/>
+                    <div xmlns="http://www.w3.org/1999/xhtml">
+                        <p>Access violation at address 000000000140D19E in module 'FHIRServer.exe'. Read of address 00000000000000D0</p>
+                    </div>
+                </text>
+                <issue>
+                    <severity value="error"/>
+                    <diagnostics value="Access violation at address 000000000140D19E in module 'FHIRServer.exe'. Read of address 00000000000000D0"/>
+                </issue>
+            </OperationOutcome>
+        </resource>
+        <request>
+            <method value="GET"/>
+            <url value="/Observation/$lastn?patient.identifier=123456789&amp;code=http://loinc.org|8302-2,http://loinc.org|8306-3,http://loinc.org|8308-9"/>
+        </request>
+        <response>
+            <status value="500"/>
+        </response>
+    </entry>
+    <entry>
+        <resource>
+            <OperationOutcome>
+                <text>
+                    <status value="generated"/>
+                    <div xmlns="http://www.w3.org/1999/xhtml">
+                        <p>Access violation at address 000000000140D19E in module 'FHIRServer.exe'. Read of address 00000000000000D0</p>
+                    </div>
+                </text>
+                <issue>
+                    <severity value="error"/>
+                    <diagnostics value="Access violation at address 000000000140D19E in module 'FHIRServer.exe'. Read of address 00000000000000D0"/>
+                </issue>
+            </OperationOutcome>
+        </resource>
+        <request>
+            <method value="GET"/>
+            <url value="/Observation/$lastn?patient.identifier=123456789&amp;category=http://snomed.info/sct|275711006&amp;_include=Observation:related-target&amp;_include=Observation:specimen"/>
+        </request>
+        <response>
+            <status value="500"/>
+        </response>
+    </entry>
+    <entry>
+        <resource>
+            <Bundle>
+                <id value="d2ce3c2f-0f62-4e27-86c6-f540833d57"/>
+                <meta>
+                    <lastUpdated value="2017-10-04T09:37:36Z"/>
+                </meta>
+                <type value="searchset"/>
+                <total value="0"/>
+                <link>
+                    <relation value="self"/>
+                    <url value="http://test.fhir.org/r3/Procedure?_format=application/fhir+xml&amp;search-id=e0a46739-b26f-4c33-b90f-d1e0af610f&amp;&amp;patient.identifier=%5Bpatient%2Did%5D&amp;category=http%3A//snomed.info/sct%7C365508006&amp;_sort=_id"/>
+                </link>
+            </Bundle>
+        </resource>
+        <request>
+            <method value="GET"/>
+            <url value="/Procedure?patient.identifier=123456789&amp;category=http://snomed.info/sct|365508006"/>
+        </request>
+        <response>
+            <status value="200"/>
+            <etag value="W/"/>
+            <lastModified value="1899-12-30T00:00:00Z"/>
+        </response>
+    </entry>
+    <entry>
+        <resource>
+            <Bundle>
+                <id value="84607976-2080-4738-9144-e5d28f9af2"/>
+                <meta>
+                    <lastUpdated value="2017-10-04T09:37:36Z"/>
+                </meta>
+                <type value="searchset"/>
+                <total value="0"/>
+                <link>
+                    <relation value="self"/>
+                    <url value="http://test.fhir.org/r3/Encounter?_format=application/fhir+xml&amp;search-id=0d234c2a-e792-41d1-bce9-ea351700f0&amp;&amp;patient.identifier=%5Bpatient%2Did%5D&amp;class=http%3A//hl7.org/fhir/v3/ActCode%7CIMP%2Chttp%3A//hl7.org/fhir/v3/ActCode%7CACUTE%2Chttp%3A//hl7.org/fhir/v3/ActCode%7CNONAC&amp;_sort=_id"/>
+                </link>
+            </Bundle>
+        </resource>
+        <request>
+            <method value="GET"/>
+            <url value="/Encounter?patient.identifier=123456789&amp;class=http://hl7.org/fhir/v3/ActCode|IMP,http://hl7.org/fhir/v3/ActCode|ACUTE,http://hl7.org/fhir/v3/ActCode|NONAC"/>
+        </request>
+        <response>
+            <status value="200"/>
+            <etag value="W/"/>
+            <lastModified value="1899-12-30T00:00:00Z"/>
+        </response>
+    </entry>
+    <entry>
+        <resource>
+            <Bundle>
+                <id value="23a7bffd-0d77-430f-9e48-be45ab2b89"/>
+                <meta>
+                    <lastUpdated value="2017-10-04T09:37:37Z"/>
+                </meta>
+                <type value="searchset"/>
+                <total value="0"/>
+                <link>
+                    <relation value="self"/>
+                    <url value="http://test.fhir.org/r3/ProcedureRequest?_format=application/fhir+xml&amp;search-id=c00c71d9-862f-42ad-b6c6-a9b27c1289&amp;&amp;patient.identifier=%5Bpatient%2Did%5D&amp;status=active&amp;_sort=_id"/>
+                </link>
+            </Bundle>
+        </resource>
+        <request>
+            <method value="GET"/>
+            <url value="/ProcedureRequest?patient.identifier=123456789&amp;status=active"/>
+        </request>
+        <response>
+            <status value="200"/>
+            <etag value="W/"/>
+            <lastModified value="1899-12-30T00:00:00Z"/>
+        </response>
+    </entry>
+    <entry>
+        <resource>
+            <Bundle>
+                <id value="6f712e58-eed8-4e2d-82e2-278a026981"/>
+                <meta>
+                    <lastUpdated value="2017-10-04T09:37:37Z"/>
+                </meta>
+                <type value="searchset"/>
+                <total value="0"/>
+                <link>
+                    <relation value="self"/>
+                    <url value="http://test.fhir.org/r3/ImmunizationRecommendation?_format=application/fhir+xml&amp;search-id=2a24f39b-ac21-475e-a2fc-a630f12e4c&amp;&amp;patient.identifier=%5Bpatient%2Did%5D&amp;_sort=_id"/>
+                </link>
+            </Bundle>
+        </resource>
+        <request>
+            <method value="GET"/>
+            <url value="/ImmunizationRecommendation?patient.identifier=123456789"/>
+        </request>
+        <response>
+            <status value="200"/>
+            <etag value="W/"/>
+            <lastModified value="1899-12-30T00:00:00Z"/>
+        </response>
+    </entry>
+    <entry>
+        <resource>
+            <Bundle>
+                <id value="de14a692-5a1c-442e-a892-76e1d4e473"/>
+                <meta>
+                    <lastUpdated value="2017-10-04T09:37:37Z"/>
+                </meta>
+                <type value="searchset"/>
+                <total value="0"/>
+                <link>
+                    <relation value="self"/>
+                    <url value="http://test.fhir.org/r3/MedicationDispense?_format=application/fhir+xml&amp;search-id=a0dd1241-dd02-4eca-bdaf-02cdcc72c2&amp;&amp;patient.identifier=%5Bpatient%2Did%5D&amp;category=http%3A//snomed.info/sct%7C422037009&amp;_sort=_id"/>
+                </link>
+            </Bundle>
+        </resource>
+        <request>
+            <method value="GET"/>
+            <url value="/MedicationDispense?patient.identifier=123456789&amp;category=http://snomed.info/sct|422037009&amp;status=in-progress,status=preparation"/>
+        </request>
+        <response>
+            <status value="200"/>
+            <etag value="W/"/>
+            <lastModified value="1899-12-30T00:00:00Z"/>
+        </response>
+    </entry>
+    <entry>
+        <resource>
+            <Bundle>
+                <id value="a1db88bb-ebde-4ea6-9e84-987926d48a"/>
+                <meta>
+                    <lastUpdated value="2017-10-04T09:37:37Z"/>
+                </meta>
+                <type value="searchset"/>
+                <total value="0"/>
+                <link>
+                    <relation value="self"/>
+                    <url value="http://test.fhir.org/r3/DeviceRequest?_format=application/fhir+xml&amp;search-id=f9337842-33ec-4604-ab8e-c188f4e230&amp;&amp;patient.identifier=%5Bpatient%2Did%5D&amp;status=active&amp;_sort=_id"/>
+                </link>
+            </Bundle>
+        </resource>
+        <request>
+            <method value="GET"/>
+            <url value="/DeviceRequest?patient.identifier=123456789&amp;status=active"/>
+        </request>
+        <response>
+            <status value="200"/>
+            <etag value="W/"/>
+            <lastModified value="1899-12-30T00:00:00Z"/>
+        </response>
+    </entry>
+    <entry>
+        <resource>
+            <Bundle>
+                <id value="c6584ea0-f21d-4f81-b536-64a9700f1a"/>
+                <meta>
+                    <lastUpdated value="2017-10-04T09:37:37Z"/>
+                </meta>
+                <type value="searchset"/>
+                <total value="0"/>
+                <link>
+                    <relation value="self"/>
+                    <url value="http://test.fhir.org/r3/Appointment?_format=application/fhir+xml&amp;search-id=f6d6b550-0e89-48c3-818d-4a8a63e15d&amp;&amp;patient.identifier=%5Bpatient%2Did%5D&amp;status=booked%2Cpending%2Cproposed&amp;_sort=_id"/>
+                </link>
+            </Bundle>
+        </resource>
+        <request>
+            <method value="GET"/>
+            <url value="/Appointment?patient.identifier=123456789&amp;status=booked,pending,proposed"/>
+        </request>
+        <response>
+            <status value="200"/>
+            <etag value="W/"/>
+            <lastModified value="1899-12-30T00:00:00Z"/>
+        </response>
+    </entry>
+</Bundle>
